@@ -2,7 +2,6 @@ base58
 streamlit
 bs4
 numpy
-time
 random
 selenium==4.2.0
 pandas
