@@ -4,7 +4,7 @@ bs4
 numpy
 time
 random
-selenium
+selenium==4.2.0
 pandas
 urllib.parse
 PIL
