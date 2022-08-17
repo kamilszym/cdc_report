@@ -1,0 +1,9 @@
+streamlit
+bs4
+numpy
+time
+random
+selenium
+pandas
+urllib.parse
+PIL
