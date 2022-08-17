@@ -114,12 +114,12 @@ elif app_mode == 'Help':
     ## Opis raportu
     Raport rozszerzający dostępne wymiary w raporcie kreacji pochodzącym z Dynacrems. Kreacje są pogrupowane wewnątrz konkretnych artykułów, których one dotyczą, wzbogacone są o informacje o pozycji kreacji w artykule, produktach znajdujących się w niej oraz sklepie, którego dotyczy boks. Przykładowe wiersze z raportu:
     """)
-    st.dataframe(pd.read_csv(r"C:\Users\kszymczak\Downloads\example_cdc.csv"))
+    st.dataframe(pd.read_csv("files/example_cdc.csv"))
     st.markdown("""
     ## Wymagane pliki
     - pobrany plik csv z wynikami kreacji z Dynacrems: https://dynacrems.grupawp.pl/panel/dashboard/
     """)
-    st.image(Image.open(r"C:\Users\kszymczak\Downloads\cdc_1.png"))
+    st.image(Image.open("files/cdc_1.png"))
     st.markdown("""
     - plik z URLami artykułów CDC: https://u.grupawp.pl/tx1a
     - Należy nałożyć dodatkowe filtry:
@@ -131,7 +131,7 @@ elif app_mode == 'Help':
     Należy wgrać pliki:
     - URLe ze Swiva w formacie identycznym jak w podanym linku:
     """)
-    st.dataframe(pd.read_csv(r"C:\Users\kszymczak\Downloads\example_urls.csv",  sep = ';'))
+    st.dataframe(pd.read_csv("files/example_urls.csv",  sep = ';'))
     st.markdown("""
     - dane z Dynacrems (pobrany plik CSV nie wymaga żadnych zmian)
     Należy podać ścieżkę do pliku `chromedriver.exe` w formacie:
