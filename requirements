@@ -3,7 +3,7 @@ streamlit
 bs4
 numpy
 random
-selenium==4.2.0
+selenium
 pandas
 urllib.parse
 PIL
