@@ -12,7 +12,9 @@ from selenium.webdriver.chrome.options import Options
 import pandas as pd
 from urllib.parse import urlparse, parse_qsl
 from PIL import Image
+import os
 
+os.chmod('files/chromedriver', 0o0755)
 
 options = Options()
 options.add_argument("--headless")

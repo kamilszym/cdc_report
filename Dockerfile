@@ -15,7 +15,6 @@ RUN apt-get update \
     g++ \
     build-essential \
     python3-dev
-    chmod 777 "files/chromedriver"
 
 WORKDIR /app
 
