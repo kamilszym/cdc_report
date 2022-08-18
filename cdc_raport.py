@@ -41,7 +41,7 @@ if app_mode=="Home":
             options = Options()
             options.add_argument('--headless')
             options.add_argument('--disable-gpu')
-            driver = webdriver.Chrome(chromedriver_path,
+            driver = webdriver.Chrome('selenium.log',
                                         options = options)
             driver.get(page_url)  
             sleep(randint(5,10))
