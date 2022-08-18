@@ -14,6 +14,15 @@ from urllib.parse import urlparse, parse_qsl
 from PIL import Image
 
 
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-features=NetworkService")
+options.add_argument("--disable-features=VizDisplayCompositor")
+
+
 def delete_selenium_log():
     if os.path.exists('selenium.log'):
         os.remove('selenium.log')
@@ -50,14 +59,7 @@ if app_mode=="Home":
             
             print("Start: "+str(i)+"/"+str(len(pages)))
             page_url = page + "?testMess=no&gdprForce=consent&noext=1"
-            options = Options()
-            options.add_argument('--headless')
-            options.add_argument('--disable-gpu')
-            options.add_argument("--no-sandbox")
-            options.add_argument("--disable-dev-shm-usage")
-            options.add_argument("--disable-features=NetworkService")
-            options.add_argument("--disable-features=VizDisplayCompositor")
-            with webdriver.Chrome(options = options, service_log_path='selenium.log') as driver:
+            with webdriver.Chrome("chromedriver.exe",options = options, service_log_path='selenium.log') as driver:
                 driver.get(page_url)  
                 sleep(randint(5,10))
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
