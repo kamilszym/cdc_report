@@ -59,7 +59,7 @@ if app_mode=="Home":
             
             print("Start: "+str(i)+"/"+str(len(pages)))
             page_url = page + "?testMess=no&gdprForce=consent&noext=1"
-            with webdriver.Chrome(executable_path = "chromedriver.exe",options = options, service_log_path='selenium.log') as driver:
+            with webdriver.Chrome("chromedriver.exe",options = options, service_log_path='selenium.log') as driver:
                 driver.get(page_url)  
                 sleep(randint(5,10))
                 soup = BeautifulSoup(driver.page_source, 'html.parser')
