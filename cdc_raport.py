@@ -118,7 +118,7 @@ if app_mode=="Home":
         pages = list("https://" + swiv_data["Strona Url"])
 
         with st.spinner("Trwa web scraping"):
-            scraping_data = cdc_scraping(pages, chromedriver_path)
+            scraping_data = cdc_scraping(pages)
         st.success("Web Scraping zakończony")
             
         with st.spinner("Trwa tworzenie raportu"):
