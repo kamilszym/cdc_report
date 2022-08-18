@@ -149,17 +149,12 @@ elif app_mode == 'Help':
         - `Kontent Data Dodania` (najłatwiej wygenerować listę dat w Excelu i wkleić jako listę)
         - `Kontent Autor Mapowany` (można dodać filtr na autora artykułu, jeśli wiemy, kto pisał w danym miesiącu)
     ## Wykonanie raportu
-    Niezbędne jest pobranie Chromedrivera (https://chromedriver.chromium.org/).
-
     Należy wgrać pliki:
     - URLe ze Swiva w formacie identycznym jak w podanym linku:
     """)
     st.dataframe(pd.read_csv("files/example_urls.csv",  sep = ';'))
     st.markdown("""
-    - dane z Dynacrems (pobrany plik CSV nie wymaga żadnych zmian)
-    Należy podać ścieżkę do pliku `chromedriver.exe` w formacie:
-    
-    `C:\\Users\\kszymczak\\Downloads\\chromedriver.exe` **(z podwójnymi slashami)**
+    - dane z Dynacrems (pobrany plik CSV nie wymaga żadnych zmian)    
    
     Po naciśnięciu przycisku `Wygeneruj raport` program wykona web scraping i przetworzy dane, po czym możliwe będzie pobranie raportu za pomocą przycisku `Pobierz raport`.
     """)
