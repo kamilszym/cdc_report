@@ -26,9 +26,9 @@ if app_mode=="Home":
 
     urls_csv = st.sidebar.file_uploader('Wgraj plik ze Swiva')
     dynacrems_csv = st.sidebar.file_uploader('Wgraj plik z Dynacrems')
-    chromedriver_path = st.sidebar.text_input("Podaj ścieżkę do Chromedrivera")
+    #chromedriver_path = st.sidebar.text_input("Podaj ścieżkę do Chromedrivera")
 
-    def cdc_scraping(pages, chromedriver_path = chromedriver_path):
+    def cdc_scraping(pages):
 
         fdata = []
         i = 1
@@ -41,8 +41,7 @@ if app_mode=="Home":
             options = Options()
             options.add_argument('--headless')
             options.add_argument('--disable-gpu')
-            driver = webdriver.Chrome('selenium.log',
-                                        options = options)
+            driver = webdriver.Chrome(options = options)
             driver.get(page_url)  
             sleep(randint(5,10))
             soup = BeautifulSoup(driver.page_source, 'html.parser')
