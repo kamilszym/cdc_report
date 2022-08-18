@@ -3,6 +3,3 @@ beautifulsoup4
 numpy
 selenium
 pandas
-PIL
-bs4
-BeautifulSoup
