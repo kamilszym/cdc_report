@@ -1,9 +1,11 @@
 base58
 streamlit
-bs4
+beautifulsoup4
 numpy
 random
 selenium
 pandas
 urllib.parse
 PIL
+bs4
+BeautifulSoup
