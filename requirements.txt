@@ -3,7 +3,6 @@ beautifulsoup4
 numpy
 selenium
 pandas
-urllib.parse
 PIL
 bs4
 BeautifulSoup
