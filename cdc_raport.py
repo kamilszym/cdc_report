@@ -14,6 +14,18 @@ from urllib.parse import urlparse, parse_qsl
 from PIL import Image
 
 
+def delete_selenium_log():
+    if os.path.exists('selenium.log'):
+        os.remove('selenium.log')
+
+
+def show_selenium_log():
+    if os.path.exists('selenium.log'):
+        with open('selenium.log') as f:
+            content = f.read()
+            st.code(content)
+
+
 st.set_page_config(layout="wide")
 
 
@@ -45,17 +57,17 @@ if app_mode=="Home":
             options.add_argument("--disable-dev-shm-usage")
             options.add_argument("--disable-features=NetworkService")
             options.add_argument("--disable-features=VizDisplayCompositor")
-            driver = webdriver.Chrome(options = options)
-            driver.get(page_url)  
-            sleep(randint(5,10))
-            soup = BeautifulSoup(driver.page_source, 'html.parser')
-            my_table = soup.select('a[href*="dynacrems_cdc"]')
-        
-            data=[]
-            for tag in my_table:
-                data.append(tag.get('href'))
-                
-            fdata.append({"url": page, "date": np.unique(data).tolist()})
+            with webdriver.Chrome(options = options, service_log_path='selenium.log') as driver:
+                driver.get(page_url)  
+                sleep(randint(5,10))
+                soup = BeautifulSoup(driver.page_source, 'html.parser')
+                my_table = soup.select('a[href*="dynacrems_cdc"]')
+            
+                data=[]
+                for tag in my_table:
+                    data.append(tag.get('href'))
+                    
+                fdata.append({"url": page, "date": np.unique(data).tolist()})
             print("End: "+str(i)+"/"+str(len(pages)))
             my_bar.progress((i/len(pages)))
             i = i + 1
