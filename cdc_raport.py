@@ -68,13 +68,7 @@ def check_password():
         return True
 
 if check_password():
-    st.write("Here goes your normal Streamlit app...")
-    st.button("Click me")
-
-
-
-
-app_mode = st.sidebar.selectbox('Select Page',['Home','Help'])
+    app_mode = st.sidebar.selectbox('Select Page',['Home','Help'])
 
 
 if app_mode=="Home":
