@@ -14,6 +14,8 @@ from urllib.parse import urlparse, parse_qsl
 from PIL import Image
 import os
 
+os.chmod('files/chromedriver', 0o0755)
+
 
 def check_password():
     """Returns `True` if the user had the correct password."""
